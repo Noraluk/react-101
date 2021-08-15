@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import logo from './logo.svg';
+import logo from '@images/logo.svg';
 import './App.css';
 
 class App extends PureComponent {
