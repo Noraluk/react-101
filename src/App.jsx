@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
-import Header from '@componenets/header/header';
-import Banner from '@componenets/banner/banner';
+import Header from '@components/header/header';
+import Banner from '@components/banner/banner';
+import Cards from '@components/cards/cards';
+
 import './App.css';
 
 class App extends PureComponent {
@@ -9,6 +11,7 @@ class App extends PureComponent {
       <div>
         <Header />
         <Banner />
+        <Cards />
       </div>
     );
   }

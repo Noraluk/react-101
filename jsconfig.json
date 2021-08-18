@@ -3,8 +3,8 @@
 		"baseUrl": "./src",
 		"jsx": "react",
 		"paths": {
-			"@componenets/*": ["./components/*"],
-			"@images": ["./assets/images/*"]
+			"@components/*": ["./components/*"],
+			"@images/*": ["./assets/images/*"]
 		}
 	},
 	"exclude": ["node_modules", "**/node_modules/*"]
