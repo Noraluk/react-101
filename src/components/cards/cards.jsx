@@ -1,32 +1,31 @@
 import React, { PureComponent } from 'react';
 import {
-  Container, Row, Card, Col, Button,
+  Container, Row, Card, Col,
 } from 'react-bootstrap';
-
-import Foo from '@images/foo.jpg';
-
-const numbers = [1, 2, 3, 4, 5];
 
 class Cards extends PureComponent {
   render() {
     return (
       <div>
-        <Container>
-          <Row xs={3}>
-            {numbers.map((i) => (
-              <div key={i}>
+        <Container fluid className="px-5">
+          <Row lg={2} md={1} className="g-4">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i.toString()}>
                 <Col>
-                  <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={Foo} />
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card&apos;s content.
-                        {' '}
-                        {i}
+                  <Card style={{ textAlign: 'center' }}>
+                    <Card.Body className="mx-5 mt-5 p-0">
+                      <br />
+                      <Card.Title style={{ fontSize: '45px', fontWeight: 'normal' }}>Another headline</Card.Title>
+                      <Card.Text style={{ fontSize: '20px' }}>
+                        And an even wittier subheading.
                       </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
+                      <br />
+                      <Container className="px-5">
+                        <Card style={{
+                          backgroundColor: 'black', height: 400, borderRadius: '30px 30px 0px 0px',
+                        }}
+                        />
+                      </Container>
                     </Card.Body>
                   </Card>
                 </Col>

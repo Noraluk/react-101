@@ -14,7 +14,7 @@ class Banner extends PureComponent {
             <p className="my-0">Apple’s marketing pages.</p>
             <div>
               <br />
-              <Button className="Banner-button" variant="outline-secondary" size="mg">Secondary</Button>
+              <Button className="Banner-button" variant="outline-secondary" size="mg">Confirm</Button>
             </div>
           </Row>
         </Container>

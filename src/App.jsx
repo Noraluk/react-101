@@ -11,6 +11,7 @@ class App extends PureComponent {
       <div>
         <Header />
         <Banner />
+        <br />
         <Cards />
       </div>
     );
