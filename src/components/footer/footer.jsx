@@ -22,36 +22,19 @@ class Footer extends PureComponent {
               <h4> Features </h4>
               <ui className="list-unstyled text-small">
                 <li>
-                  <a className="link-secondary" href>Cool stuff</a>
+                  <a className="link-secondary" href="/">Cool stuff</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Random feature</a>
+                  <a className="link-secondary" href="/">Random feature</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Stuff for developers</a>
+                  <a className="link-secondary" href="/">Stuff for developers</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Another one</a>
+                  <a className="link-secondary" href="/">Another one</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Last time</a>
-                </li>
-              </ui>
-            </Col>
-            <Col>
-              <h4> Resources </h4>
-              <ui className="list-unstyled text-small">
-                <li>
-                  <a className="link-secondary" href>Resource name</a>
-                </li>
-                <li>
-                  <a className="link-secondary" href>Resource</a>
-                </li>
-                <li>
-                  <a className="link-secondary" href>Another resource</a>
-                </li>
-                <li>
-                  <a className="link-secondary" href>Final resource</a>
+                  <a className="link-secondary" href="/">Last time</a>
                 </li>
               </ui>
             </Col>
@@ -59,16 +42,33 @@ class Footer extends PureComponent {
               <h4> Resources </h4>
               <ui className="list-unstyled text-small">
                 <li>
-                  <a className="link-secondary" href>Business</a>
+                  <a className="link-secondary" href="/">Resource name</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Education</a>
+                  <a className="link-secondary" href="/">Resource</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Government</a>
+                  <a className="link-secondary" href="/">Another resource</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Gaming</a>
+                  <a className="link-secondary" href="/">Final resource</a>
+                </li>
+              </ui>
+            </Col>
+            <Col>
+              <h4> Resources </h4>
+              <ui className="list-unstyled text-small">
+                <li>
+                  <a className="link-secondary" href="/">Business</a>
+                </li>
+                <li>
+                  <a className="link-secondary" href="/">Education</a>
+                </li>
+                <li>
+                  <a className="link-secondary" href="/">Government</a>
+                </li>
+                <li>
+                  <a className="link-secondary" href="/">Gaming</a>
                 </li>
               </ui>
             </Col>
@@ -76,16 +76,16 @@ class Footer extends PureComponent {
               <h4> About </h4>
               <ui className="list-unstyled text-small">
                 <li>
-                  <a className="link-secondary" href>Team</a>
+                  <a className="link-secondary" href="/">Team</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Locations</a>
+                  <a className="link-secondary" href="/">Locations</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Privacy</a>
+                  <a className="link-secondary" href="/">Privacy</a>
                 </li>
                 <li>
-                  <a className="link-secondary" href>Terms</a>
+                  <a className="link-secondary" href="/">Terms</a>
                 </li>
               </ui>
             </Col>

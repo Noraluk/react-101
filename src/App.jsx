@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import Header from '@components/header/header';
-import Banner from '@components/banner/banner';
-import Cards from '@components/cards/cards';
 import Footer from '@components/footer/footer';
+import Routes from './routes';
 
 import './App.css';
 
@@ -11,9 +10,7 @@ class App extends PureComponent {
     return (
       <div>
         <Header />
-        <Banner />
-        <br />
-        <Cards />
+        <Routes />
         <Footer />
       </div>
     );

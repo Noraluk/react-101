@@ -15,16 +15,16 @@ class Header extends PureComponent {
           <Navbar.Collapse id="basic-navbar-nav">
             <Container>
               <Nav className="header">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                   <AiFillAliwangwang style={{ width: '30px', height: '30px', color: 'grey' }} />
                 </Navbar.Brand>
-                <Nav.Link href="#tour">Tour</Nav.Link>
-                <Nav.Link href="#product">Product</Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#enterprise">Enterprise</Nav.Link>
-                <Nav.Link href="#support">Support</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
-                <Nav.Link href="#cart">Cart</Nav.Link>
+                <Nav.Link href="/">Tour</Nav.Link>
+                <Nav.Link href="/">Product</Nav.Link>
+                <Nav.Link href="/">Features</Nav.Link>
+                <Nav.Link href="/">Enterprise</Nav.Link>
+                <Nav.Link href="/">Support</Nav.Link>
+                <Nav.Link href="/">Pricing</Nav.Link>
+                <Nav.Link href="/">Cart</Nav.Link>
               </Nav>
             </Container>
           </Navbar.Collapse>
