@@ -3,9 +3,26 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 40vh;
+	height:65vh;
 }
 
 .Banner-button {
 	border: 0px;
+}
+
+.Phone {
+	position: relative;
+	background-color: blue;
+	width: 400px;
+	height: 740px;
+	transform: rotate(30deg);
+	border-radius: 21px;
+}
+
+.Phone-2 {
+	top: 0%;
+	right: auto;
+	bottom:0%;
+	left: 5%;
+	background-color: white;
 }
