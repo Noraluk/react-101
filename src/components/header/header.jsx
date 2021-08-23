@@ -9,7 +9,7 @@ import './header.css';
 class Header extends PureComponent {
   render() {
     return (
-      <div>
+      <>
         <Navbar bg="dark" expand="md" variant="dark">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -29,7 +29,7 @@ class Header extends PureComponent {
             </Container>
           </Navbar.Collapse>
         </Navbar>
-      </div>
+      </>
     );
   }
 }

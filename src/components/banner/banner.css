@@ -1,28 +1,43 @@
-.Banner {
-	background-color: rgb(240, 240, 240);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height:65vh;
-}
 
-.Banner-button {
-	border: 0px;
-}
-
-.Phone {
+.banner {
 	position: relative;
-	background-color: blue;
-	width: 400px;
-	height: 740px;
-	transform: rotate(30deg);
-	border-radius: 21px;
+	overflow: hidden;
+	display: block;
+	background-color: #f8f9fa;
+	text-align: center;
 }
 
-.Phone-2 {
-	top: 0%;
+.banner-button {
+	width: 100px;
+}
+
+.product-device {
+	position: absolute;
+	right: 10%;
+	bottom: -30%;
+	width: 300px;
+	height: 540px;
+	background-color: #333;
+	border-radius: 21px;
+	transform: rotate(30deg);
+	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.product-device-2 {
+	top: -25%;
 	right: auto;
-	bottom:0%;
+	bottom: 0;
 	left: 5%;
-	background-color: white;
+	background-color: #e5e5e5;
+}
+
+.product-device::before {
+	position: absolute;
+	top: 10%;
+	right: 10px;
+	bottom: 10%;
+	left: 10px;
+	content: "";
+	background-color: rgba(255, 255, 255, .1);
+	border-radius: 5px;
 }

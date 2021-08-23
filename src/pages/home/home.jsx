@@ -5,11 +5,11 @@ import Cards from '@components/cards/cards';
 class Home extends PureComponent {
   render() {
     return (
-      <div>
+      <>
         <Banner />
         <br />
         <Cards />
-      </div>
+      </>
     );
   }
 }
