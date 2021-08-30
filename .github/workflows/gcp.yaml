@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@develop
 
     # Setup gcloud CLI
     - uses: Noraluk/react-101@develop
