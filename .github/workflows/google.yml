@@ -19,8 +19,8 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: ${{ env.GKE_CLUSTER }}    # TODO: update to cluster name
-  GKE_ZONE: ${{ env.GKE_ZONE }}   # TODO: update to cluster zone
+  GKE_CLUSTER: react-101   # TODO: update to cluster name
+  GKE_ZONE: asia-southeast2-a   # TODO: update to cluster zone
   DEPLOYMENT_NAME: gke-test # TODO: update to deployment name
   IMAGE: static-site
 
