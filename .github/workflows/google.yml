@@ -77,7 +77,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@develop
+        uses: actions/checkout@v2
 
       - name: Setup GCP Service Account
         uses: Noraluk/react-101@develop
