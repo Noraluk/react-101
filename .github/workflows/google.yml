@@ -81,7 +81,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup Cloud SDK
-      uses: Noraluk/react-101@v0.2.0
+      uses: Noraluk/react-101@develop
       with:
         project_id: ${{ env.PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
