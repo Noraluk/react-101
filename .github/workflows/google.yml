@@ -66,25 +66,42 @@
 #       run: |-
 #         docker push "gcr.io/${{ env.PROJECT_ID }}/$IMAGE:$GITHUB_SHA"
 
-name: publish
+# name: publish
+
+# on: [push]
+
+# env:
+#   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+
+#     - name: Setup Cloud SDK
+#       uses: Noraluk/react-101@develop
+#       with:
+#         project_id: ${{ env.PROJECT_ID }}
+#         service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+#     - name: Authorize Docker push
+#       run: gcloud auth configure-docker
+
+name: test
 
 on: [push]
 
-env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-
 jobs:
-  deploy:
+  json-test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup Cloud SDK
-      uses: Noraluk/react-101@develop
-      with:
-        project_id: ${{ env.PROJECT_ID }}
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
-
-    - name: Authorize Docker push
-      run: gcloud auth configure-docker
+      - uses: ./
+        env:
+          PROJECT_ID: ${{secrets.GCP_PROJECT_ID}}
+          APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+        with:
+          args: app deploy app.yaml
