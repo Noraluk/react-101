@@ -94,7 +94,7 @@ name: deploy-cloudrun Credentials Integration
 on:
   push:
     branches:
-    - 'main'
+    - 'develop'
   pull_request:
 
 jobs:
