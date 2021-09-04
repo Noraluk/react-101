@@ -20,17 +20,17 @@ jobs:
     - name: Check commit sha ...
       run: echo ${{ github.sha }}
       
+    - name: Build the Docker image
+      run: docker build -t gcr.io/react-101-325014/react .
+      
     - name: Authenticate into Google Cloud Platform
       run: gcloud auth activate-service-account kanoon@react-101-325014.iam.gserviceaccount.com --key-file=key.json
       
     - name: Configure Docker to use Google Cloud Platform
-      run: gcloud auth configure-docker
-    
-    - name: set project id in gcloud
-      run: gcloud config set project react-101-325014
+      run: gcloud auth configure-docker --quiet
 
     - name: Push image to Google Cloud Container Registry
-      run: gcloud builds submit --tag gcr.io/react-101-325014/react
+      run: docker push gcr.io/react-101-325014/react:latest
 
     - name: Deploy to Cloud Run
       run: gcloud beta run deploy react-101--quiet --image gcr.io/react-101-325014/react:latest --project react-101-325014 --region asia-southeast1 --platform managed
