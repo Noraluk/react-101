@@ -1,14 +1,17 @@
-FROM node:14-alpine AS development
-ENV NODE_ENV development
-# Add a work directory
+# build environment
+FROM node:14-alpine as react-build
 WORKDIR /app
-# Cache and Install dependencies
-COPY package.json .
-COPY yarn.lock .
-RUN yarn 
-# Copy app files
-COPY . .
-# Expose port
-EXPOSE 3000
-# Start the app
-CMD [ "craco", "start" ]
+COPY . ./
+RUN yarn
+RUN yarn build
+
+# server environment
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/conf.d/configfile.template
+
+COPY --from=react-build /app/build /usr/share/nginx/html
+
+ENV PORT 8080
+ENV HOST 0.0.0.0
+EXPOSE 8080
+CMD sh -c "envsubst '\$PORT' < /etc/nginx/conf.d/configfile.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"

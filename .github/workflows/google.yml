@@ -7,36 +7,30 @@ on:
     branches: [ develop ]
 
 jobs:
+  build_and_push_to_gcp_and_deploy_to_cloud_run:
+    runs-on: ubuntu-latest
+    
+    container: 
+      image: google/cloud-sdk:latest
 
-    deploy:
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v1
 
-        name: Setup Gcloud Account
-        runs-on: ubuntu-latest
-        env:
-          IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_APP_NAME }}
-        steps:
+    - name: Check commit sha ...
+      run: echo ${{ github.sha }}
+      
+    - name: Build the Docker image
+      run: docker build -t gcr.io/react-101-324615/react .
+      
+    - name: Authenticate into Google Cloud Platform
+      run: gcloud auth activate-service-account kanoon@react-101-325014.iam.gserviceaccount.com --key-file=key.json
+      
+    - name: Configure Docker to use Google Cloud Platform
+      run: gcloud auth configure-docker --quiet
 
-        - name: Login
-          uses: Noraluk/react-101@develop
-          with:
-            project_id: ${{ secrets.GCP_PROJECT_ID }}
-            service_account_email: ${{ secrets.GCP_EMAIL }}
-            service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+    - name: Push image to Google Cloud Container Registry
+      run: docker push gcr.io/react-101-324615/react:latest
 
-        - name: Configure Docker
-          run: gcloud auth configure-docker --quiet
-
-        - name: Checkout repository
-          uses: actions/checkout@v2
-
-        - name: Build Docker image
-          run: docker build . -t $IMAGE_NAME
-
-        - name: Test Docker image
-          run: docker run $IMAGE_NAME sh -c "go test -v"
-
-        - name: Push Docker image
-          run: docker push $IMAGE_NAME
-
-        - name: Deploy Docker image
-          run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region asia-southeast1 --platform managed
+    - name: Deploy to Cloud Run
+      run: gcloud beta run deploy react-101--quiet --image gcr.io/react-101-324615/react:latest --project react-101 --region asia-southeast1 --platform managed
