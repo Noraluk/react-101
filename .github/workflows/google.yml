@@ -33,4 +33,4 @@ jobs:
       run: docker push gcr.io/react-101-325014/react:latest
 
     - name: Deploy to Cloud Run
-      run: gcloud beta run deploy react-101--quiet --image gcr.io/react-101-325014/react:latest --project react-101 --region asia-southeast1 --platform managed
+      run: gcloud beta run deploy react-101--quiet --image gcr.io/react-101-325014/react:latest --project react-101-325014 --region asia-southeast1 --platform managed
