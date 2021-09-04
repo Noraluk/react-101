@@ -27,7 +27,7 @@ jobs:
       run: gcloud auth activate-service-account kanoon@react-101-325014.iam.gserviceaccount.com --key-file=key.json
       
     - name: Configure Docker to use Google Cloud Platform
-      run: gcloud auth configure-docker --quiet
+      run: gcloud auth configure-docker
 
     - name: Push image to Google Cloud Container Registry
       run: docker push gcr.io/react-101-325014/react:latest
