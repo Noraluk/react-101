@@ -21,7 +21,7 @@ jobs:
       run: echo ${{ github.sha }}
       
     - name: Build the Docker image
-      run: docker build -t gcr.io/react-101-325107/react .
+      run: docker build -f Dockerfile.prod -t gcr.io/react-101-325107/react .
       
     - name: Authenticate into Google Cloud Platform
       run: gcloud auth activate-service-account kanoon@react-101-325107.iam.gserviceaccount.com --key-file=key.json
